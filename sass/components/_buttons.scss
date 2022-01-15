@@ -7,6 +7,7 @@ when it is an anchor element so it functions as a link */
 the button before and then sees the button again */
 
 .btn {
+    &,
     &:link,
     &:visited {
     text-transform: uppercase;
@@ -19,6 +20,10 @@ the button before and then sees the button again */
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+
+    //Change for <button> element
+    border:none;
+    cursor: pointer;
     }
     
     &:hover {
@@ -30,7 +35,9 @@ the button before and then sees the button again */
         }
     }
     
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-.1rem);
         box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
     }
@@ -40,6 +47,14 @@ the button before and then sees the button again */
         color: $color-grey-dark;     
         &::after {
             background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;     
+        &::after {
+            background-color: $color-primary;
         }
     }
     
