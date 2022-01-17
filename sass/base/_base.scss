@@ -17,10 +17,23 @@ html {
     all we need to change is the font-size % of our root element.
     Which also help us maintain scalable code and improve responsive design!
     */
-    //defines what 1rem is
+    //defines what 1rem is = 10px
     font-size: 62.5%;
+
+
+    //passing entire line of code to mixin of media query
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%;//1rem = 9px
+    }
+    @include respond(tab-port) { //width < 900?
+        font-size: 50%;//1rem = 8px
+    }
+    @include respond(big-desktop) { //width > 1800?
+        font-size: 80%;//1rem = 12px
+    }
 }
 
 body {
     box-sizing: border-box;
 }
+
