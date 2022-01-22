@@ -42,3 +42,8 @@ body {
     }
 }
 
+//When ever the user select a text it will show with it with that style
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
